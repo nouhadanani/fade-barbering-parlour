@@ -3,4 +3,5 @@ Allow:/
 Disallow:/private
 Disallow:admin
 
-sitemap:https://username.github.io/sitemap.xml
+
+sitemap: https://nouhadanani.github.io/fade-barbering-parlour/sitemap.xml 
