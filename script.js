@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const appointmentdate = document.getElementById('appointmentdate').value;
         const phone = document.getElementById('phone').value;
 
-        const subject = `book for: ${selectedProduct}`;
+        const subject = `orderfor: ${selectedProduct}`;
         const body = `
           Hello fadeflex barbering parlour,
 
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thankYou.scrollIntoView({ behavior: "smooth" });
     });
  });        
+
 
 
 
