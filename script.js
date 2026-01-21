@@ -60,13 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const mailtoLink = `mailto:nouhadani3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
      
-        window.location.herf = mailtoLink;
+        window.location.href = mailtoLink;
 
         purchaseForm.style.display = 'none';
         thankYou.style.display = 'block';
         thankYou.scrollIntoView({ behavior: "smooth" });
     });
  });        
+
 
 
 
