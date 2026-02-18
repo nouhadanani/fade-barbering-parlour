@@ -282,7 +282,8 @@ margin-bottom: 20px;
     .product-image{
         height: 250px;
     }
-} #mc_embed_shell{
+}
+#mc_embed_shell{
             text-align: center;
             align-items: center;
         }
@@ -299,9 +300,47 @@ margin-bottom: 20px;
             display: flex ;  
             justify-content: center;
             align-items: center;
-        }
+        }   
+/* SUBSCRIBE BUTTON STYLING */
+#mc-embedded-subscribe{
+    background: #f0ca07;
+    color: #f0ca07;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+/* CLOSE (X) BUTTON */
+.close-popup{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #111;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
 
-
+        /* .popup-content{
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+            position: relative; 
+        } */
 
  /* Footer */
 
