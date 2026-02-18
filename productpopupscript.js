@@ -4,7 +4,7 @@ setTimeout(function(){
 },2000);
 
 // close popup when X is clicked
-document.querySelector(".close-btn").addEventListener("click",function(){
+document.querySelector(".close-popup").addEventListener("click",function(){
     document.getElementById("mc_embed_shell").style.display ="none";
 })
 
