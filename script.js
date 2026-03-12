@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const appointmentdate = document.getElementById('appointmentdate').value;
         const phone = document.getElementById('phone').value;
 
-        const subject = `orderfor: ${selectedProduct}`;
+        const subject = `0rder for: ${selectedProduct}`;
         const body = `
           Hello fadeflex barbering parlour,
 
@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
         thankYou.style.display = 'block';
         thankYou.scrollIntoView({ behavior: "smooth" });
     });
- });        
-
-
-
-
+ });    
+ 
+ // Footer
+ // Dynamic Year
+ document.getElementById('year').textContent = new Date().getFullYear();
 
 

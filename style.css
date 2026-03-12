@@ -51,7 +51,7 @@ body {
             max-width: 600px;
         }
 
-        .cta-btn {
+        .cta-btn{
             background: #f4b400;
             color: #111;
             padding: 15px 30px;
@@ -132,6 +132,14 @@ body {
             width: 300px;
             position: relative; 
         } */
+
+        /* footer {
+             background: #111; 
+             color: white;
+             text-align:centre;
+             padding:20px;
+             margin-top: 40px 
+            } */
 
        /* Footer */
         footer {
