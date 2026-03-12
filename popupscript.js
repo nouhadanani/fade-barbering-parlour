@@ -4,7 +4,7 @@ setTimeout(function(){
 },5000);
 
 // close popup when X is clicked
-document.querySelector("close-popup").addEventListener("click",function(){
+document.querySelector(".close-popup").addEventListener("click",function(){
     document.getElementById("mc_embed_shell").style.display ="none";
 })
 
@@ -15,3 +15,7 @@ document.getElementById("mc_embed_shell").addEventListener("click", function(e){
     }
 }); 
          
+
+// Footer
+ // Dynamic Year
+ document.getElementById('year').textContent = new Date().getFullYear();

@@ -14,4 +14,7 @@ document.getElementById("mc_embed_shell").addEventListener("click", function(e){
         this.style.display ="none";     
     }
 }); 
-         
+
+// Footer
+ // Dynamic Year
+ document.getElementById('year').textContent = new Date().getFullYear();
