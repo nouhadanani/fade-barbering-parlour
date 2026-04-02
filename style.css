@@ -8,7 +8,7 @@ body {
         header {
             background: #111;
             color: white;
-            padding: 20px 50px;
+            padding: 25px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -17,7 +17,8 @@ body {
             z-index: 1000;
         }
 
-        header h1 { margin: 0; font-size: 28px; }
+        header h1 { margin: 0; font-size: 28px; margin-right: 65%; }
+        .brand { margin: 0; font-size: 28px; height: 40px; width: auto;}
 
         nav a {
             color: white;
@@ -25,6 +26,37 @@ body {
             text-decoration: none;
             font-size: 16px;
             font-weight: bold;
+        }
+
+         /* Hide burger CSS*/
+     .burger {
+         display: none;
+         font-size: 26px;
+        cursor: pointer;
+        z-index: 200; /* stays above header */
+         }
+
+         .active {
+            display: block;
+        }
+         /* Responsive Styles */
+
+        @media (max-width: 768px) {
+.burger {
+         display: block;
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         color: #312f2f; /* make sure it’s visible */
+         display: flex;
+         }
+}
+
+
+        .sub-nav a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
         }
 
         nav a:hover { color: #f4b400; }
@@ -54,6 +86,7 @@ body {
         .cta-btn{
             background: #f4b400;
             color: #111;
+            text-decoration: none;
             padding: 15px 30px;
             border: none;
             border-radius: 8px;
@@ -73,12 +106,103 @@ body {
 
         .product-card h3 { margin: 15px 0 10px; font-size: 20px; }
         .product-card p { font-size: 15px; }
+           
+/* FULL SCREEN CENTER */
+.promo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 14, 0.299); 
+    backdrop-filter: blur(2px); 
+    z-index: 10000 ;  
+}
+
+/* IMAGE */
+.promo-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 90%;
+    margin: auto; 
+}
+
+.promo-box img {
+   width: 500px;
+   max-width: 800px;
+   height: 500px;
+   display: block;
+   border-radius: 12px;
+}
+
+/* CLOSE (X) BUTTON */
+.close-btn{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #111;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
 
         #mc_embed_shell{
             text-align: center;
             align-items: center;
         }
 
+        @media (max-width:480px) {
+
+    .popup-container {
+        padding: 12px;
+        align-items: center;
+    }
+
+    /* Target Mailchimp embedded popup content */
+    .popup-container * {
+        box-sizing: border-box;
+    }
+
+    .popup-container form,
+    .popup-container .mc-modal,
+    .popup-container .popup-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Fix scaling issue */
+    .popup-container {
+        transform: none !important;
+        zoom: 1 !important;
+    }
+
+    /* Inputs + buttons fit nicely */
+    .popup-container input,
+    .popup-container button {
+        width: 100% !important;
+        font-size: 16px; /* prevents iOS zoom */
+    }
+
+    /* Prevent overflow */
+    .popup-container {
+        overflow-y: auto;
+    }        
+}    
         .popup-container{
             position: fixed;
             top: 0;
@@ -92,7 +216,7 @@ body {
             justify-content: center;
             align-items: center;
         }   
-        /* SUBSCRIBE BUTTON STYLING */
+/* SUBSCRIBE BUTTON STYLING */
 #mc-embedded-subscribe{
     background: #f0ca07;
     color: #f0ca07;
@@ -231,3 +355,27 @@ body {
         .copy{
         font-size: x-small;
         }
+        
+
+
+       @media(max-width: 768px){ 
+        .nav-main{
+        display: none;
+       }
+    }  
+        .burger{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #312f2f;  /*make sure it's visible*/
+
+       }
+    .nav-main.active{
+       display: flex;
+      flex-direction: column;
+    }
+
+   header h1{margin-right: 31%;
+    
+    }

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 </head>
-      <meta charset="UTF-8" />
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=0.1 /">
       <title>fadeflex barbering parlour</title>
+
+      <link rel="Icon" type="image/png" href="image/LOGO.jpeg">
 
       <!-- <SEO Meta Tags -->
        <meta name="description" content="discovery quality barbering salon at unbeatable prices">
@@ -75,24 +77,28 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fadeflex">
    
-
-   <link rel="stylesheet" href="style.css">
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
 
+
     <!-- Header -->
     <header>
+      <img src="image/LOGO.jpeg" alt="fade barbering parlour logo" class="brand">
         <h1>fadeflex barbering parlour</h1>
+        <!-- burger Icon -->
+         <div class="burger" onclick="togglemenu()">
+          <i class="fas fa-bars"></i>
+         </div>
         <nav>
             <a href="product.html">Products</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
+<main>
     <!-- Hero Section -->
     <section class="hero">
         <div>
@@ -101,7 +107,18 @@
             <a href="product.html" class="cta-btn">Book Now </a>
         </div>
     </section>
+    
 
+    <!-- PROMO -->
+    <div class="promo-overlay" id="promo">
+  
+  <div class="promo-box">
+      <span class="close-btn" onclick="closePromo()">X</span> 
+      
+      <img src="image/promoimage.png" loading="lazy" fetchpriority="high" alt="Promo">
+  </div>
+
+</div>
 
      <!-- new letter -->
 <div id="mc_embed_shell" class="popup-container" style="display:none;"> 
@@ -922,21 +939,19 @@
     </script></div>
 
 
-
    <!-- About Section -->
     <h2 class="section-title" id="about">Why Choose Us?</h2>
     <section style="padding: 0 50px; max-width: 1000px; margin: auto; font-size: 18px; text-align: center;">
         <p>fadeflex is your trusted grooming service that makes you confident in your looks.</p>
-   
     </section>
-
+</main>
      <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>fade-barbering-parlour</h3>
-                    <p>Bringing the authentic fresh and sharp look to Ghanaians flezxing thier fades.</p>
+                    <p>Bringing the authentic fresh and sharp look to Ghanaians flexing thier fades.</p>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/profile.php?id=61583445790083"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/fadeflex_studio?igsh=eXB1OGpwcmFncWE4&utm_source=qr"><i class="fa-brands fa-square-instagram"></i></a>
@@ -962,7 +977,7 @@
                 <div class="hours">
                     <h3>Opening Hours</h3>
                     <p>Monday - Saturday: 9am - 9pm</p>
-                    <p>Sunday: 12am - 9pm</p>
+                    <p>Sunday: 12pm - 9pm</p>
            
          <hr class="footer-line" >
             <div class="year">
@@ -972,7 +987,9 @@
     </footer>
     
     <script src="productpopupscript.js"></script>
-
+    <script src="popupscript.js"></script>
+    <script src="burgericon.js"></script>
+    <script src="contact.html"></script>
 
 
 </body>
