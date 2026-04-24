@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 </head>
+
+<!-- Google tag (gtag.js) -->
+
+<script>
+
+  function loadAnalytics(){
+  var gtaScript= document.createElement("script")
+  gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-MHSB0F2BZ6";
+  gtaScript.async=true;
+  document.head.appendChild(gtaScript);
+
+ gtaScript.onload = function() {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MHSB0F2BZ6');
+  }
+  }
+</script>
+
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=0.1 /">
       <title>fadeflex barbering parlour</title>
@@ -945,6 +965,21 @@
         <p>fadeflex is your trusted grooming service that makes you confident in your looks.</p>
     </section>
 </main>
+
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+     🍪We use cookies to improve your experince and analyze traffic.
+      You can accept or manage your prefrences.
+    </p>
+
+    <div class="cookie-buttons">
+      <button id="accept-btn" class="btn-accept">Accept All</button>
+      <button id="decline-btn" class="btn-decline">Decline</button>
+    </div>
+  </div>
+</div>
+
      <!-- Footer -->
     <footer>
         <div class="container">
@@ -985,11 +1020,12 @@
             </div>
         </div>
     </footer>
+
     
     <script src="productpopupscript.js"></script>
     <script src="popupscript.js"></script>
     <script src="burgericon.js"></script>
-    <script src="contact.html"></script>
+    <script src="cookie.js"></script>
 
 
 </body>
