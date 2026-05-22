@@ -499,24 +499,27 @@ margin-bottom: 20px;
         .copy{
         font-size: x-small;
         }
-  
+        
 
-@media(max-width: 480px){
-    .products-container{
-        grid-template-columns:1fr 1fr;
-        gap: 15px;
-        padding: 15px;
+
+       @media(max-width: 768px){ 
+        .nav-main{
+        display: none;
+       }
+    }  
+        .burger{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #312f2f;  /*make sure it's visible*/
+
+       }
+    .nav-main.active{
+       display: flex;
+      flex-direction: column;
     }
 
-    .product-image{
-        height: 180px;
-    }
+   header h1{margin-right: 31%;
     
-    .product-info{
-        padding: 10px;
     }
-
-    .purchase-form{
-        padding: 20px;
-    }
-}
