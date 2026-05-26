@@ -96,14 +96,21 @@
 <body>
 
      <header>
-      <img src="image/LOGO.jpeg" alt="fade barbering parlour logo" class="brand">
- <h1>fadeflex barbering parlour</h1>
-<nav>
-  <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="index.html">Home</a>
-</nav>
-    </header>
+   <img src="image/LOGO.jpeg" alt="fade-barbering-parlour" class="brand">
+   <h1>fade barbering parlour</h1> 
+     <!-- Burger Icon -->
+    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav-main" id="mobile-menu">
+        <a href="index.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
     <div class="products-container">
 <!-- card 1 -->
@@ -123,8 +130,6 @@
     </div>
 
 
-
-
 <!-- card 2 -->
     <div class="product-card">
     <div class="product-image">
@@ -141,7 +146,6 @@
       <button class="buy-now-btn" data-product="haircut-and black-dye"  data-price="70-50,50-30" data-image="image\haircut dye styles.jpeg">Buy Now</button>
        </div>
     </div>
-
 
 
 <!-- card 3 -->
@@ -179,14 +183,10 @@
        <button  class="buy-now-btn" data-product="pedicure"  data-price="100" data-image="image\pedicure.jpeg">Buy Now</button>
        </div>
    </div>
+</div>
 
 
 
-
-
-                   
-              
-                  </div>
  <!-- new letter -->
 <div id="mc_embed_shell" class="popup-container" style="display:none;"> 
        <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->

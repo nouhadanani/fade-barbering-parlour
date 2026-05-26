@@ -139,3 +139,119 @@ img {
 .btnn:hover {
     background: #ff3b3b;
 }
+ 
+/* burger icon CSS*/
+        .burger{
+         display: none;
+         width: 50px;
+         height: 50px;
+         border: none;
+         background: rgba(255,255,255,0.15);
+         backdrop-filter: blur(10px);
+         border-radius: 14px;
+         cursor: pointer;
+         position: absolute;
+         top: 15px;
+         right: 20px;
+         z-index: 2000;
+
+         /* Flex for lines */
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 6px;
+
+        transition: all 0.3s ease;
+}
+         /* Burger Lines */
+         .burger span{
+         width: 24px;
+         height: 3px;
+         background: white;
+         border-radius: 20px;
+         transition: all 0.3s ease;
+}       
+        /* Animate to X */
+         .burger.active span:nth-child(1){
+          transform: rotate(45deg) translate(6px, 6px);
+}
+
+        .burger.active span:nth-child(2){
+         opacity: 0;
+}
+
+         .burger.active span:nth-child(3){
+          transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+
+        .sub-nav a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+@media(max-width:768px){
+
+    /* Show Burger */
+    .burger{
+        display: flex;
+    }
+
+    /* Fix Header Layout */
+    header{
+        padding: 18px 15px;
+    }
+
+    header h1{
+        margin: 0;
+        font-size: 22px;
+        text-align: left;
+        margin-right: 44%;
+    }
+
+    /* Hide Desktop Nav */
+    .nav-main{
+        position: absolute;
+        top: 85px;
+        right: 20px;
+
+        width: 220px;
+        padding: 20px;
+
+        background: white;
+        border-radius: 18px;
+
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+
+        transition: all 0.3s ease;
+    }
+
+    /* Dropdown Active */
+    .nav-main.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Mobile Links */
+    .nav-main a{
+        color: #222;
+        margin: 0;
+        font-size: 16px;
+        padding: 8px 0;
+    }
+
+    .nav-main a:hover{
+        color: #45c052ec;
+    }
+}

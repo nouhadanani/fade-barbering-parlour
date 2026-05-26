@@ -85,18 +85,21 @@
 </head>
  <!-- Header -->
     <header>
-      <img src="image/LOGO.jpeg" alt="fade barbering parlour logo" class="brand">
-        <h1>fadeflex barbering parlour</h1>
-        <!-- burger Icon -->
-         <div class="burger" onclick="togglemenu()">
-          <i class="fas fa-bars"></i>
-         </div>
-        <nav>
-            <a href="product.html">Products</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+   <img src="image/LOGO.jpeg" alt="fade-barbering-parlour" class="brand">
+   <h1>fade barbering parlour</h1> 
+     <!-- Burger Icon -->
+    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav-main" id="mobile-menu">
+        <a href="product.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
 
  <!-- Contact Page -->
         <section id="contact" class="page">
