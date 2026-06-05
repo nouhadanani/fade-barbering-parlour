@@ -87,7 +87,7 @@
       ]
     }
   </script>
-  <link rel="stylesheet" href="style.css">
+
 <!-- CSS -->
 <link rel="stylesheet" href="product.css">
 
@@ -95,99 +95,122 @@
 </head>
 <body>
 
-     <header>
-   <img src="image/LOGO.jpeg" alt="fade-barbering-parlour" class="brand">
-   <h1>fade barbering parlour</h1> 
-     <!-- Burger Icon -->
-    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <nav class="nav-main" id="mobile-menu">
-        <a href="index.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-    <div class="products-container">
-<!-- card 1 -->
-    <div class="product-card">
-    <div class="product-image">
-      <img src="image/dreadatwist.jpeg" alt="Professional dreadlocks and hair twist styling for men at Fadeflex Barbering Parlour.">
+  <header>
+    <img src="image/LOGO.jpeg" alt="Juice by Evelyn Logo" class="brand"> 
+    <div class="Brand">
+        <h1>FADE⚡FLEX</h1>
     </div>
-    <div class="product-info">
-        <div class="style">dread&twist </div>
-        <div class="product-name">Chrome Derma Roller</div>
-            
-        <div class="prices">
-          <span class="price" >new dreads 500 locking 100</span>
-       </div>
-       <button class="buy-now-btn" data-product="dread&twist"  data-price="500,100" data-image="image\dreadaswist.jpeg">Buy Now</button>
-   </div>
+    
+     <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+    <div class="nav-main" id="mobileNavMenu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-
-
-<!-- card 2 -->
-    <div class="product-card">
-    <div class="product-image">
-       <img src="image/haircut with black dye styles.jpeg" alt="Sharp skin fade haircut featuring black dye application for a defined, fresh hairline.">
-   </div> 
-   <div class="product-info">
-       <div class="style">haircut and black dye </div>
-       <div class="product-name">haircut and black dye </div>
-                
-       <div class="prices">
-          <span class="price" >adult w-dye 70 w/o-dye 30</span>
-          <span class="price" >kids w-dye50 w/odye-30</span>
+    
+    <div class="cart-icon" id="cartIconBtn" role="button" aria-label="View Shopping Cart">
+      🛒
+    </div>
+    <div class="cart-count">
+             <span class="cart-countt" id="cartCountBadge">0</span>
       </div>
-      <button class="buy-now-btn" data-product="haircut-and black-dye"  data-price="70-50,50-30" data-image="image\haircut dye styles.jpeg">Buy Now</button>
-       </div>
-    </div>
+</header>
+    
+  
 
+<main>
+    <!-- Products Section -->
+    <section id="products">
+        <div class="products-container" id="productsContainer">
+            <!-- Product cards dynamically injected via product1.js -->
+        </div>
+    </section>
 
-<!-- card 3 -->
-    <div class="product-card">
-    <div class="product-image">   
-        <img src="image/haircutwithcoloreddye.jpeg" alt="Vibrant colored hair dye styles and trendy men's and women's haircut at Fadeflex Ghana.">
-    </div>      
-    <div class="product-info">
-       <div class="style">hair dye </div>
-       <div class="product-name">hair dye </div>
-                    
-        <div class="prices">
-          <span class="price" >white colour 150</span>
-          <span class="price" >all colours 100</span>
-                       
-       </div>
-       <button  class="buy-now-btn" data-product="hair-dye"  data-price="150,100" data-image="image\hair dye.jpeg">Buy Now</button>
-       </div>
-   </div>
+    <!-- Cart Sidebar Overlay -->
+    <div class="overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping Cart Sidebar">
+        <div class="cart-header">
+            <h3>Your Cart 🛍️</h3>
+            <button class="close-cart" id="closeCartBtn" aria-label="Close Cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <div class="empty-cart-msg">Cart is empty</div>
+        </div>
+        <div class="cart-total" id="cartTotalPrice">Total: ₵0</div>
+        <button class="checkout-cart-btn" id="proceedCheckoutFromCart">Proceed to Checkout</button>
+    </aside>
 
+    <!-- Purchase Order Section -->
+    <section id="purchaseForm" class="purchase-form" style="display: none;">     
+        <h2>Complete your Purchase</h2>
+        
+        <!-- Multi-item or Single Item summary container -->
+        <div class="product-sumary" id="orderSummaryContainer">
+            <img id="selectedProductImage" src="" alt="Selected Product View">
+            <div>
+                <h3 id="selectedProductName"></h3>
+                <p id="selectedProductPrice"></p>
+            </div>
+        </div>
 
-<!-- card 4 -->
- <div class="product-card">
-    <div class="product-image">   
-        <img src="image/pedicure.jpeg" alt="pedicure and relaxing foot massage at Fadeflex barbering parlour.">
-    </div>      
-    <div class="product-info">
-       <div class="style">pedicure </div>
-       <div class="product-name">pedicure </div>
-                    
-        <div class="prices">
-          <span class="price" >100</span>
-                       
-       </div>
-       <button  class="buy-now-btn" data-product="pedicure"  data-price="100" data-image="image\pedicure.jpeg">Buy Now</button>
-       </div>
-   </div>
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label for="address">Delivery Address (Details/Landmarks)</label>
+                <input type="text" id="address" required autocomplete="street-address">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required autocomplete="tel">
+            </div>
+            
+            <!-- Hidden input field to temporarily pass multi-item lists into the mailto parser if needed -->
+            <input type="hidden" id="hiddenCartData" name="hiddenCartData">
+            
+            <button type="submit" class="submit-btn">Send Order via Email</button>
+        </form>
+        
+        <div class="email-instructions">
+            <h3>How it Works</h3>
+            <p>Clicking send opens your native email app or client with your pre-filled cart order. Review details and press send to lock it in!</p>
+        </div>
+    </section>
+
+    <!-- Post-submission feedback view -->
+    <section id="thankYou" class="thank-you" style="display: none;">
+        <h2>✅ Thank You For Your Purchase!</h2>
+        <p>Your order configuration is complete. Please look out for your email client layout prompt to finalize submission.</p>
+    </section>
+</main>
+
+<!-- PROMO -->
+    <div class="promo-overlay" id="promo">
+  
+  <div class="promo-box">
+      <span class="close-btn" onclick="closePromo()">X</span> 
+      
+      <img src="image/promoimage.png" loading="lazy" fetchpriority="high" alt="Promo">
+  </div>
+
 </div>
 
-
-
- <!-- new letter -->
+<!-- new letter -->
 <div id="mc_embed_shell" class="popup-container" style="display:none;"> 
        <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
   <style type="text/css">
@@ -1005,66 +1028,8 @@
     });
     </script></div>
 
-          <div id="purchaseForm" class="purchase-form">     
-            <h2>Complete your Purchase</h2>
-            <div class="product-sumary">
-        <img id="selectedProductImage" src="" alt="selected product" >
-        
-        <div>
-            <h3 id="selectedProductName"></h3>
-            <p id="selectedProductPrice"></p>
-        </div>
 
-         </div>
-
-         <form id="checkoutForm">
-
-            <div class="form-group">
-                <label for="name">Full Name </label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-
-             <div class="form-group">
-                <label for="email">Email Address </label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-               <div class="form-group">
-                <label for="appointmen-tdate">appointment date </label>
-                <input type="address" id="appointmentdate" name="address" required>
-            </div>
-
-             <div class="form-group">
-                <label for="phone">Phone Number </label>
-                <input type="phone" id="phone" name="phone" required>
-            </div>
-
-              <button type="submit" class="submit-btn">Send order via Email</button>
-            </form>
-
-            <div class="email-instructions">
-                <h3>How it Works</h3>
-                <p>When you click "send book vai email",
-                    your default email client will open
-                    with a pre-filled email containing your appointment
-                    details. Simply review the information and click
-                     send to book your appointment.
-                </p>
-            </div>
-         </div>
-
-            <div id="thankYou" class="thank-you">
-            <i class="fas fa-check-circle"></i>
-            <h2>Thank You For choosing us.</h2>
-             
-            <p>Your appointment email has been prepared.
-             please check your email client
-             and click send to complete your booking.
-            </p>
-            <p>We'll process your booking once we receive your email.</p>
-
-          </div>
+  
        
          <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-content">
@@ -1085,7 +1050,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>fade-barbering-parlour</h3>
+                    <h3>fadeflex-barbering-parlour</h3>
                     <p>Bringing the authentic fresh and sharp look to Ghanaians flezxing thier fades.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1102,7 +1067,7 @@
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Dansoman ,Zabarma line wowoti road</p>
                     <p><i class="fas fa-phone"></i> 0262743812,0599059264</p>
-                    <p><i class="fas fa-envelope"></i> Email: <a style="color: beige;" href="mailto:enyomens@gmail.com">nouhadani3@gmail.com</a></p>
+                    <p><i class="fas fa-envelope"></i> Email: <a style="color: black;" href="mailto:enyomens@gmail.com">nouhadani3@gmail.com</a></p>
                   </div>
                     </div>
                 </div>
@@ -1118,16 +1083,16 @@
            
          <hr class="footer-line" >
             <div class="year">
-                <p class="copy">&copy; <span id="year"></span> fade-barbering-parlour. All Rights Reserved. Powered by <a style="color: beige;" href="mailto:CapstoneTechnologiesGh@proton.me">CapstoneTechnologiesGh</a></p>
+                <p class="copy">&copy; <span id="year"></span> fade-barbering-parlour. All Rights Reserved. Powered by <a style="color: black;" href="mailto:CapstoneTechnologiesGh@proton.me">CapstoneTechnologiesGh</a></p>
             </div>
         </div>
     </footer> 
     
 <script src="popupscript.js"></script>
-<script src="script.js"></script>
 <script src="productpopupscript.js"></script>
 <script src="burgericon.js"></script>
 <script src="cookie.js"></script>
+<script src="product.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
