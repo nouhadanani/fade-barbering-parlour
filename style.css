@@ -6,7 +6,7 @@ body {
         }
 
         header {
-            background: #111;
+           background: #284f79ec;
             color: white;
             padding: 25px 50px;
             display: flex;
@@ -17,8 +17,8 @@ body {
             z-index: 1000;
         }
 
-        header h1 { margin: 0; font-size: 28px; margin-right: 65%; }
-        .brand { margin: 0; font-size: 28px; height: 40px; width: auto;}
+        header h1 {margin: 0; font-size: 28px; margin-right: 66%; }
+        .brand { margin: 0; font-size: 28px; height: 40px; width: auto; border-radius:50% ;}
 
         nav a {
             color: white;
@@ -91,7 +91,7 @@ body {
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: rgb(250, 250, 250);
             padding: 20px;
         }
 
