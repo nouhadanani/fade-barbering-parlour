@@ -1,0 +1,411 @@
+/* --- CSS Reset & Variables --- */
+:root {
+    --primary-color: #1b4332; /* Deep forest green representing natural ingredients */
+    --accent-color: #ff4d6d;  /* Vibrant strawberry pink accent */
+    --text-color: #2d3142;
+    --bg-color: #faf9f6;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Header & Navigation 
+   ========================================================================== */
+header {
+    background: #f0eee6;
+    color: black;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Flexbox wrapper handles spacing seamlessly instead of fixed margin percentages */
+header h1 { 
+    font-size: 24px;  
+    font-weight: bold;
+    margin-right: auto; /* Pushes the navigation links cleanly to the far right */
+    margin-left: 15px;
+}
+
+.brand { 
+    margin: 0; 
+    height: 50px; 
+    width: auto; 
+    border-radius: 50%;
+}
+
+.nav-main {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: black;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav a:hover { 
+    color: #f4b300e7; 
+}
+
+/* ==========================================================================
+   Burger Menu Elements
+   ========================================================================== */
+.burger {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 2000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.burger span {
+    width: 22px;
+    height: 3px;
+    background: black;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}       
+
+/* Animate Burger to 'X' */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ==========================================================================
+   FAQ Section Layout 
+   ========================================================================== */
+.faq-container {
+    max-width: 850px;       
+    margin: 4rem auto;      
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;             
+}
+
+.faq-header {
+    background-color: #ffffff !important; 
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+}
+
+.faq-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color, #1b4332); 
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 0.75rem 0;
+    white-space: nowrap;    
+    width: 100%;
+    text-align: center;
+}
+
+.faq-header p {
+    color: #64748b;         
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Responsive adjustment for small phone screens */
+@media (max-width: 768px) {
+    .faq-header h2 {
+        white-space: normal; /* Allows normal multi-line text wrapping on narrow mobile screens */
+        font-size: 2rem;
+    }
+    .faq-container {
+        margin: 2rem auto;
+    }
+}
+
+/* ==========================================================================
+   Accordion Component Styling
+   ========================================================================== */
+.faq-accordion-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 15px -3px rgba(27, 67, 50, 0.04), 0 4px 6px -2px rgba(27, 67, 50, 0.02);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.35rem 1.75rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-question:focus-visible {
+    background-color: #f8fafc;
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 400;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 1rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fdfefe;
+}
+
+.faq-answer p {
+    padding: 0 1.75rem 1.5rem 1.75rem;
+    color: #475569;
+    font-size: 1rem;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   Footer Styling
+   ========================================================================== */
+footer {
+    background-color: #f0eee6;
+    color: black;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.footer-section p, .footer-section li {
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: 1.5rem;
+    width: 100%;  
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(7, 0, 0);
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+        
+.social-icons a:hover {
+    background: var(--primary-color);
+    color: #f9f8f8;
+    transform: translateY(-3px);
+}
+
+.footer-line {
+    border: none;
+    border-top: 1px solid #cfcece;
+    margin: 20px 0;
+}
+
+.copy {
+    font-size: x-small;
+}
+
+/* ==========================================================================
+   Responsive Adaptations Media Queries
+   ========================================================================== */
+@media(max-width:768px){
+    .burger {
+        display: flex;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 20px;
+        text-align: left;
+        margin-right: 45%;
+    }
+
+    .nav-main {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        width: 220px;
+        padding: 20px;
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s ease;
+        align-items: flex-start;
+    }
+
+    .nav-main.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-main a {
+        color: #222;
+        margin: 0;
+        font-size: 16px;
+        padding: 6px 0;
+        width: 100%;
+    }
+
+    .nav-main a:hover {
+        color: #f4b400;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-container {
+        padding-top: 2.5rem;
+    }
+    .faq-header h1 { 
+        font-size: 2rem; 
+    }
+    .faq-question { 
+        font-size: 1.05rem; 
+        padding: 1.1rem 1.25rem; 
+    }
+    .faq-answer p { 
+        padding: 0 1.25rem 1.25rem 1.25rem; 
+    }
+}
