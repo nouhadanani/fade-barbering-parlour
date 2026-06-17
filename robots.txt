@@ -1,6 +1,6 @@
-User=agent:*
-Allow:/
-Disallow:/private
-Disallow:admin
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
 
 sitemap: https://nouhadanani.github.io/fade-barbering-parlour/sitemap.xml 
