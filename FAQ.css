@@ -23,53 +23,60 @@ body {
 }
 
 /* ==========================================================================
-   Header & Navigation 
+   Header & Navigation
    ========================================================================== */
 header {
-    background: #f0eee6;
-    color: black;
-    padding: 15px 50px;
+    background-color:#284f79ec;
+    color: white;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    gap: 1rem;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 900;
+    box-shadow: var(--shadow-sm);
 }
 
-/* Flexbox wrapper handles spacing seamlessly instead of fixed margin percentages */
-header h1 { 
-    font-size: 24px;  
-    font-weight: bold;
-    margin-right: auto; /* Pushes the navigation links cleanly to the far right */
-    margin-left: 15px;
-}
-
-.brand { 
-    margin: 0; 
-    height: 50px; 
-    width: auto; 
+/* Fixed logo dimensions to avoid conflict with product brand text */
+header img.brand {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
     border-radius: 50%;
+}
+
+.Brand h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .nav-main {
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin-left: auto; /* Pushes navigation balance naturally */
 }
 
-nav a {
-    color: black;
-    margin-left: 25px;
+.nav-main nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-main nav ul li a {
+    color: rgb(250, 250, 251);
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.2s ease;
+    font-weight: 500;
+    transition: opacity 0.2s, color 0.2s;
 }
 
-nav a:hover { 
-    color: #f4b300e7; 
+.nav-main nav ul li a:hover {
+    opacity: 0.9;
+    color: #f39c12;
 }
-
 /* ==========================================================================
    Burger Menu Elements
    ========================================================================== */
