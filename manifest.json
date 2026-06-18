@@ -1,20 +1,21 @@
 {
+  "id":"/fade-barbering-parlour/",
   "short_name": "FFS",
   "name": " fadeflex ",
   "icons": [
     {
-      "src": "/image/LOGOA1.jpg",
+      "src": "/fade-barbering-parlour/image/LOGOA1.jpg",
       "type": "image/jpg",
       "sizes": "192x192"
     },
     {
-      "src": "/image/LOGO A2.jpg",
+      "src": "/fade-barbering-parlour/image/LOGO A2.jpg",
       "type": "image/jpg",
       "sizes": "512x512",
       "purpose": "any maskable"
     }
     ],
-  "start_url": "/",
+  "start_url": "/fade-barbering-parlour/",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "display": "standalone",
