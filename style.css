@@ -5,28 +5,61 @@ body {
             color: #333;
         }
 
-        header {
-           background: #284f79ec;
-            color: white;
-            padding: 25px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+      /* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+    background-color:#284f79ec;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    box-shadow: var(--shadow-sm);
+}
 
-        header h1 {margin: 0; font-size: 28px; margin-right: 66%; }
-        .brand { margin: 0; font-size: 28px; height: 50px; width: auto; border-radius:50% ;}
+/* Fixed logo dimensions to avoid conflict with product brand text */
+header img.brand {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+}
 
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.Brand h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto; /* Pushes navigation balance naturally */
+}
+
+.nav-main nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-main nav ul li a {
+    color: rgb(250, 250, 251);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-main nav ul li a:hover {
+    opacity: 0.9;
+    color: #f39c12;
+}
 
        
 /* burger icon CSS*/
