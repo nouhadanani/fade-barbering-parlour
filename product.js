@@ -307,8 +307,8 @@ function identifyBrevoCustomer(name, email) {
             totalOrder = window.currentBuyNowProduct.price;
         } else { orderDetails = 'No product'; }
         const subject = `New Order from ${name}`;
-        const body = `Hello Kantamanto,\n\nI would like to place an order:\n\n${orderDetails}\n\nTotal: ₵${totalOrder}\n\nMy details:\n- Name: ${name}\n- Email: ${email}\n- Address: ${address}\n- Phone: ${phone}\n\nPlease confirm.`;
-        window.location.href = `mailto:abizynelies9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const body = `Hello fadeflex,\n\nI would like to place an order:\n\n${orderDetails}\n\nTotal: ₵${totalOrder}\n\nMy details:\n- Name: ${name}\n- Email: ${email}\n- Address: ${address}\n- Phone: ${phone}\n\nPlease confirm.`;
+        window.location.href = `mailto:nouhahadani3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         if (window.trackEcommerceEvent) window.trackEcommerceEvent('generate_lead', { currency: 'GHS', value: totalOrder });
         document.getElementById('purchaseForm').style.display = 'none';
         document.getElementById('thankYou').style.display = 'block';
