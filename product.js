@@ -289,6 +289,8 @@ function identifyBrevoCustomer(name, email) {
         document.getElementById('thankYou').style.display = 'none';
         document.getElementById('cartSidebar').classList.remove('open');
         document.getElementById('cartOverlay').classList.remove('active');
+        document.getElementById('purchaseForm').scrollIntoView({behavior:'smooth'});
+    });
         // Email checkout
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -317,3 +319,4 @@ function identifyBrevoCustomer(name, email) {
     document.getElementById("year").textContent = new Date().getFullYear();
     loadCart();
     renderProducts();
+    
